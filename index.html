@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Farah Al Najada | Architect</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio and CV of architect Farah Al Najada." />
+
+  <!-- Google Font بسيط ونظيف -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #f7f7f7;
+      --card: #ffffff;
+      --text: #111111;
+      --muted: #666666;
+      --accent: #111111;
+      --border: #e3e3e3;
+      --max-width: 1040px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .wrapper {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 24px 16px 72px;
+    }
+
+    /* الترويسة */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0 8px;
+      position: sticky;
+      top: 0;
+      background-color: rgba(247,247,247,0.96);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+    }
+
+    nav a {
+      margin-left: 20px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    nav a:hover {
+      color: var(--text);
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 32px;
+      padding: 48px 0 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 3vw, 2.6rem);
+      font-weight: 600;
+      margin: 0 0 8px;
+    }
+
+    .hero-subtitle {
+      margin: 0 0 16px;
+      font-size: 1rem;
+      color: var(--muted);
+    }
+
+    .hero-text {
+      font-size: 0.98rem;
+      color: var(--muted);
+      max-width: 520px;
+    }
+
+    .hero-buttons {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 9px 18px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      border: 1px solid var(--accent);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s ease, color 0.15s ease, transform 0.08s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background: #000000;
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--accent);
+    }
+
+    .btn-outline:hover {
+      background: #e9e9e9;
+      transform: translateY(-1px);
+    }
+
+    .hero-meta {
+      margin-top: 18px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .hero-card {
+      background-color: var(--card);
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      padding: 20px 18px;
+      font-size: 0.9rem;
+    }
+
+    .hero-label {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .hero-role {
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .hero-location {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .hero-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .hero-list li::before {
+      content: "• ";
+    }
+
+    /* أقسام عامة */
+    section {
+      padding: 40px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-heading {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0 0 6px;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    /* About */
+    .about-text {
+      max-width: 720px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .focus-tags {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.8rem;
+    }
+
+    .tag {
+      border-radius: 999px;
+      padding: 4px 10px;
+      border: 1px solid var(--border);
+      background-color: #ffffff;
+      color: var(--muted);
+    }
+
+    /* Highlights */
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .highlight-card {
+      background-color: var(--card);
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      padding: 16px 16px 14px;
+      font-size: 0.9rem;
+    }
+
+    .highlight-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .highlight-body {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .project-card {
+      background-color: var(--card);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      padding: 14px 14px 16px;
+      font-size: 0.9rem;
+    }
+
+    .project-label {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .project-title {
+      font-size: 0.96rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .project-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .project-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* CV section */
+    .cv-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
+      gap: 28px;
+      align-items: flex-start;
+    }
+
+    .cv-text {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .cv-summary {
+      background-color: var(--card);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      padding: 16px 16px 14px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .cv-summary h4 {
+      margin: 0 0 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .cv-summary ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .cv-summary li {
+      margin-bottom: 4px;
+    }
+
+    /* Contact */
+    .contact-text {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .contact-list {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .contact-list div {
+      margin-bottom: 4px;
+    }
+
+    footer {
+      font-size: 0.78rem;
+      color: var(--muted);
+      padding-top: 12px;
+      text-align: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 840px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      nav {
+        display: flex;
+        width: 100%;
+        overflow-x: auto;
+      }
+
+      nav a {
+        margin-left: 0;
+        margin-right: 14px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .highlights {
+        grid-template-columns: 1fr;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cv-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <!-- الترويسة -->
+    <header>
+      <div class="logo">Farah Al Najada | Architect</div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#highlights">Highlights</a>
+        <a href="#projects">Projects</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div>
+        <h1 class="hero-title">Architect specializing in sustainable and context-responsive design.</h1>
+        <p class="hero-subtitle">
+          Junior architect with experience in both design and on-site supervision, working on projects that connect people, place, and purpose.
+        </p>
+        <p class="hero-text">
+          I work across academic, competition, and professional projects, with a growing focus on sustainability, user experience in space, and
+          clear architectural communication in both Arabic and English.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">View portfolio</a>
+          <!-- بعد ما تضيفي ملف ال CV في نفس الفولدر، غيري الرابط تحت لاسم الملف الحقيقي -->
+          <a href="Farah-AlNajada-Resume.pdf" class="btn btn-outline" target="_blank">Download CV</a>
+        </div>
+        <div class="hero-meta">
+          Based in Madaba, Jordan – open to opportunities, collaborations, and graduate study in architecture.
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <div class="hero-label">Profile</div>
+        <div class="hero-role">Farah Al Najada • Junior Architect</div>
+        <div class="hero-location">Madaba, Jordan · Arabic (Native), English (Fluent)</div>
+        <ul class="hero-list">
+          <li>On-site supervision experience with UNOPS & JEA training program.</li>
+          <li>Background in academic and competition projects, including a shortlisted graduation project.</li>
+          <li>Strong digital tools: Revit, AutoCAD, SketchUp, Lumion, Twinmotion, Photoshop.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <h2 class="section-heading">About</h2>
+      <p class="section-subtitle">A brief introduction and focus areas.</p>
+
+      <p class="about-text">
+        I am a junior architect based in Madaba, Jordan, with a Bachelor of Arts in Architecture from Al-Balqa’a Applied University
+        (2019–2024). My work combines academic design studios, competition entries, and real on-site supervision experience.
+        I have trained and worked with several architectural offices, including CUBE Architects, the Office of Rashad Alahmad, and
+        the Office of Alshakatreh & Aljariri under the Jordan Engineers Association training program. I also worked as a Site Supervisor
+        with the United Nations Office for Project Services (UNOPS), supervising maintenance and renovation works within an intensive
+        labour project.
+      </p>
+      <p class="about-text">
+        These experiences helped me develop a balanced understanding of both design and execution – from drawings and 3D models to site
+        reports, coordination, and quality control. I enjoy working on projects that are contextual, socially aware, and technically clear.
+      </p>
+
+      <div class="focus-tags">
+        <span class="tag">Sustainable & energy-conscious design</span>
+        <span class="tag">User-centered & behavioral design</span>
+        <span class="tag">Context-responsive architecture</span>
+        <span class="tag">Visualization & presentations</span>
+        <span class="tag">On-site supervision & coordination</span>
+      </div>
+    </section>
+
+    <!-- Highlights -->
+    <section id="highlights">
+      <h2 class="section-heading">Highlights</h2>
+      <p class="section-subtitle">Key strengths at a glance.</p>
+
+      <div class="highlights">
+        <div class="highlight-card">
+          <div class="highlight-title">Design & Visualization</div>
+          <div class="highlight-body">
+            Concept development, 2D/3D modeling, and rendering using AutoCAD, Revit, SketchUp, Lumion, Twinmotion, and Photoshop for clear
+            project visualization and documentation.
+          </div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-title">Field Supervision</div>
+          <div class="highlight-body">
+            Hands-on experience supervising maintenance and renovation works, monitoring progress, and preparing daily site reports in Arabic and English
+            within UNOPS and local offices.
+          </div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-title">Awards & Development</div>
+          <div class="highlight-body">
+            Shortlisted graduation project in the MAKAN Competition and winner of a seat design competition by Anamel Jordanian Association for Heritage Crafts,
+            supported by BIM and engineering supervision training.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2 class="section-heading">Selected Projects</h2>
+      <p class="section-subtitle">A mix of academic, competition, and professional work.</p>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-label">Academic • Healthcare</div>
+          <div class="project-title">Healthcare Facility</div>
+          <div class="project-meta">Design Studio | Lead Designer</div>
+          <p class="project-desc">
+            A comprehensive healthcare facility designed to provide patient-centered care in a calm, legible environment.
+            The project focuses on clear circulation, natural light, and a healing atmosphere, while integrating sustainable strategies in
+            the building envelope and layout.
+          </p>
+        </article>
+
+        <article class="project-card">
+          <div class="project-label">Concept • Infrastructure</div>
+          <div class="project-title">EV Charging Station</div>
+          <div class="project-meta">Concept Design | Lead Designer</div>
+          <p class="project-desc">
+            A modular electric vehicle charging station designed as a safe, accessible, and user-friendly stop for drivers.
+            The project combines clear wayfinding, shaded waiting areas, and integrated fast-charging technologies within a simple, adaptable
+            architectural language.
+          </p>
+        </article>
+
+        <article class="project-card">
+          <div class="project-label">Academic • Innovation</div>
+          <div class="project-title">Technology Innovation Centre</div>
+          <div class="project-meta">Concept | Lead Designer</div>
+          <p class="project-desc">
+            A dynamic hub designed to foster creativity, collaboration, and technological advancement.
+            The centre provides flexible workspaces, workshops, and learning areas for students, startups, and young professionals, encouraging
+            knowledge exchange and community engagement.
+          </p>
+        </article>
+
+        <article class="project-card">
+          <div class="project-label">Graduation • Competition</div>
+          <div class="project-title">MAKAN – Graduation Project</div>
+          <div class="project-meta">Shortlisted | Community-oriented design</div>
+          <p class="project-desc">
+            A graduation project exploring how architecture can support community, identity, and public life.
+            The design responds to local context and climate while offering shaded, open, and interconnected spaces that invite people to gather,
+            interact, and express themselves.
+          </p>
+        </article>
+
+        <article class="project-card">
+          <div class="project-label">Professional • Field</div>
+          <div class="project-title">UNOPS – Site Supervision</div>
+          <div class="project-meta">Site Supervisor | Intensive Labour Project</div>
+          <p class="project-desc">
+            Supervision of maintenance and renovation works under the Intensive Labour Project with UNOPS.
+            Responsibilities included monitoring on-site progress, ensuring safety and quality standards, and preparing daily bilingual reports and
+            documentation while coordinating between contractors, engineers, and UNOPS staff.
+          </p>
+        </article>
+
+        <article class="project-card">
+          <div class="project-label">Competition • Product</div>
+          <div class="project-title">Seat Design – Anamel</div>
+          <div class="project-meta">Winner | Anamel Jordanian Association</div>
+          <p class="project-desc">
+            A competition-winning bench design that combines contemporary form with local craftsmanship.
+            The project explores comfort, material honesty, and how a simple seating element can create moments of pause and connection in public space.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CV -->
+    <section id="cv">
+      <h2 class="section-heading">Curriculum Vitae</h2>
+      <p class="section-subtitle">Overview of education, experience, and skills.</p>
+
+      <div class="cv-layout">
+        <div class="cv-text">
+          <p>
+            For a detailed overview of my education, professional experience, skills, and achievements, you can download my CV.
+            Below is a brief summary.
+          </p>
+          <div class="hero-buttons">
+            <!-- حدّثي اسم الملف حسب اسم ال PDF اللي هترفعيه -->
+            <a href="Farah-AlNajada-Resume.pdf" class="btn btn-primary" target="_blank">Download full CV (PDF)</a>
+          </div>
+        </div>
+
+        <aside class="cv-summary">
+          <h4>Summary</h4>
+          <ul>
+            <li><strong>Education:</strong> B.A. in Architecture, Al-Balqa’a Applied University (2019–2024).</li>
+            <li><strong>Experience:</strong> Architect (training program – JEA), Site Supervisor – UNOPS, internships at CUBE Architects and the Office of Rashad Alahmad.</li>
+            <li><strong>Technical:</strong> AutoCAD, Revit, SketchUp, Photoshop, Lumion, Twinmotion.</li>
+            <li><strong>Soft skills:</strong> Collaboration, communication, time management, presentations, creative problem solving.</li>
+            <li><strong>Awards:</strong> Shortlisted – MAKAN Graduation Project, Winner – Seat Design Competition (Anamel).</li>
+            <li><strong>Training:</strong> BIM Training Course & Engineering Supervision Course – Jordanian Engineers Association.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2 class="section-heading">Contact</h2>
+      <p class="section-subtitle">Open to opportunities, collaborations, and further study.</p>
+
+      <p class="contact-text">
+        I am open to architecture and design opportunities, collaborations on competitions, and postgraduate study applications.  
+        Feel free to reach out for project inquiries, portfolio requests, or potential collaborations.
+      </p>
+
+      <div class="contact-list">
+        <div><strong>Email:</strong> <a href="mailto:farahalnajada@gmail.com">farahalnajada@gmail.com</a></div>
+        <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/farah-al-najada" target="_blank">linkedin.com/in/farah-al-najada</a></div>
+        <div><strong>Location:</strong> Madaba, Jordan</div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Farah Al Najada. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    // تحديث سنة الحقوق تلقائياً
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
